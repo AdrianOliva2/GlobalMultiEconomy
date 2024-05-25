@@ -1,0 +1,16 @@
+# This is the configuration file for the plugin
+
+# This is the Database configuration
+DB:
+  # This option is used to create the DataBase in the host if it does not exist
+  create-db-in-host-ifnot-exist: false
+  # Host of DataBase
+  host: "127.0.0.1"
+  # Port of DataBase
+  port: 3306
+  # Name of DataBase
+  database: "globalmultieconomy"
+  # Username of DataBase
+  username: "root"
+  # Password of DataBase
+  password: ""

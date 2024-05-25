@@ -1,0 +1,43 @@
+name: GlobalMultiEconomy
+version: '${version}'
+main: net.serveminecraft.minecrafteros.globalmultieconomy.GlobalMultiEconomy
+api-version: '1.20'
+author: Adrian_oliva
+description: 'A plugin that allows you to have multiple global economies in your network or single server.'
+softdepend: [ PlaceholderAPI ]
+commands:
+  globalmultieconomy:
+    description: 'Main command for GlobalMultiEconomy plugin.'
+    permission: 'globalmultieconomy.admin'
+    aliases: [ gme ]
+permissions:
+  globalmultieconomy.admin:
+    description: 'Allows to use the main command of GlobalMultiEconomy plugin.'
+    default: op
+  globalmultieconomy.economy.check.self:
+    description: 'Allows to use the economy commands to check your own balance.'
+    default: op
+  globalmultieconomy.economy.check.others:
+    description: 'Allows to use the economy commands to check other users balance.'
+    default: op
+  globalmultieconomy.economy.check.*:
+    description: 'Allows to use the economy commands to check any user balance.'
+    default: op
+    children:
+      globalmultieconomy.economy.check.self: true
+      globalmultieconomy.economy.check.others: true
+  globalmultieconomy.economy.admin:
+    description: 'Allos to use the economy commands as give, take, set balance.'
+    default: op
+  globalmultieconomy.economy.*:
+    description: 'Allows to use all economy commands.'
+    default: op
+    children:
+      globalmultieconomy.economy.admin: true
+      globalmultieconomy.economy.check.*: true
+  globalmultieconomy.*:
+    description: 'Allows to use all commands of GlobalMultiEconomy plugin.'
+    default: op
+    children:
+      globalmultieconomy.admin: true
+      globalmultieconomy.economy.*: true
